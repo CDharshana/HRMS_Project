@@ -1,0 +1,64 @@
+
+.wrapper{
+	margin:0 auto;
+	width:1400px;
+	
+}
+
+.clearfix{
+	overflow:auto;
+}
+.top-bar{
+	width:1360px;
+	background: #cce0ff; 
+	padding: 10px 10px 10px 30px;
+	
+
+}
+header .logo h1{
+	font-size:48px;
+	font-weight: normal;
+	font-variant:small-caps;
+	margin:5px 5px 0px 25px;
+}
+header .logo p{
+	margin:0px 5px 5px 25px;
+}
+
+
+nav{
+	background: #555;
+	width:1400px;
+	text-align: center;
+	border-radius:5px;
+	background: linear-gradient(#333,#444,#333);
+}
+nav ul{
+	list-style: none;
+}
+nav ul li{
+	display: inline;
+	
+}
+
+nav ul li a{
+	color: #fff;
+	margin:10px 100px 10px 100px;
+	display:inline-block;
+	font-size: 20px;
+	text-decoration: none;
+}
+nav ul li a:hover{
+	color:red;
+}
+.img01{
+	margin:0;
+	padding-top: 0;
+}
+
+nav ul{
+	list-style: none;
+	
+} 
+
+

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/new.css">
+		 
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen1.css">
+		
+		<link rel="stylesheet" type="text/css" href="css/leave.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+
+	
+<meta name="keywords" content="simple jquery validation html form" />
+<script src="jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+
+<style>
+*{
+	margin:0px;
+	padding:0px;
+}
+body {
+    background-color: #f9f9f9;
+}
+#content { background-color:#f9f9f9; padding:20px;  }
+h1 {
+   font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#header {
+    background-color: #00a2d1;
+	height:50px;
+	text-align:center;
+}
+#header a
+{
+	color:#fff;
+	text-decoration:none;
+	font-size:35px;
+	font-family:Tahoma, Geneva, sans-serif;
+	position:relative;
+}
+
+#register-form {
+	background:#fff;
+    border: 1px solid #DFDCDC;
+    border-radius: 15px 15px 15px 15px;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 25px 50px 10px;
+    width: 350px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+#register-form .fieldgroup {
+    display: inline-block;
+    padding: 8px 10px;
+    width: 340px;
+}
+fieldset{	border:none; }
+
+#register-form .fieldgroup input{
+    margin: 10px 0;
+    height: 40px;
+	width:100%;
+	border:solid #cdcdcd 1px;
+	border-radius:3px;
+	padding-left:10px;
+}
+
+#register-form .submit {
+    padding: 10px;
+    height: 40px !important;
+	background:#00a2d1;
+	color:#fff;
+	font-weight:bolder;
+	border:solid #cdcdcd 1px;
+	border-radius:3px;
+}
+
+#register-form .fieldgroup label.error {
+    color: #FB3A3A;
+    display: inline-block;
+    font-weight:500;
+    padding: 0;
+    text-align: left;
+}
+</style>
+
+<script type="text/javascript">
+
+       $('document').ready(function()
+	   { 
+            $("#register-form").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                },
+                messages: {
+                    firstname: "Please enter your firstname",
+                    lastname: "Please enter your lastname",
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Password at least have 8 characters"
+                    },
+                    email: "Please enter a valid email address"
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });  
+
+});
+</script>
+
+	</head>
+	<body>
+			<div class="wrapper">
+
+			<div class="top-bar clearfix">
+				<div class="top-Image">
+				<a href="index.html">
+					<img src="Img/Inter.png" alt="new1">
+				</div><!--top-Image-->
+				<div class="Logo">
+					<h1>Intervest</h1>
+					<h3>Software Technologies</h3>
+				</div><!--site-search-->
+				<div class="HR">
+					<h2>Human Resource Management System</h2>
+					<img src="Img/1.png" alt="new1">
+				</div><!--HR-->
+			</div><!--top-bar-->
+
+			<div class="status clearfix">
+					<div class="Logout">
+						<a href="#" class="swagButton">LogOut</a>
+					</div><!--Logout-->
+
+					<div class="userlogin">
+						<h4>User Name:K.A.C.Dharshana</h4>
+						<h4>Role:HR Manager</h4>
+					</div><!--userlogin-->
+			</div><!--Status-->
+<div class="dropdown">
+  <ul class="nav nav-pills" id="nav">
+  <li class="nav-item">
+    <a class="nav-link hover" href="#">PIM</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Leave</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Add Entitlement</a>
+      <a class="dropdown-item " href="applyLeave.html">Apply Leave</a>
+      <a class="dropdown-item" href="#">Assign Leave</a>
+	  <a class="dropdown-item" href="#">Leave Balance</a>
+      <a class="dropdown-item" href="#"><b>Configure</b></a>
+	  <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="configure.html#LeaveType">&nbsp &nbsp Leave Type</a>
+	   <a class="dropdown-item" href="configure.html#LeavePeriod">&nbsp &nbsp	Leave Period</a>
+	    <a class="dropdown-item" href="configure.html#workWeek">&nbsp	&nbsp Work Week</a>
+		 <a class="dropdown-item" href="#">&nbsp &nbsp	Holiday</a>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Leave Status</a>
+      <a class="dropdown-item" href="leaveList.html">Leave List</a>
+	  <a class="dropdown-item" href="Dashboard.html">Dashboard</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Reports</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="#">Salary</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link " href="#">Trainee</a>
+  </li>
+</ul>
+
+<script>
+$('#nav').onePageNav({
+	filter: ':not(.external)'
+});
+</script>
+</div>
+
+			
+			<!-- <div class="image clearfix">
+				<div class="moto">
+					<h1>A place for innovation<br> Success is our vision...</h1>
+				</div> -->
+			<!-- </div> --><!--image-->
+
+			<div class="FormLayout">
+
+<ol class="breadcrumb" style="margin-top:0%">
+  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+  <li class="breadcrumb-item active">Leave</a></li>
+  <li class="breadcrumb-item active">Leave List</li>
+</ol>
+</div>
+
+
+
+	
+<!-- Leave Type -->
+
+
+			
+			<div class="FormLayout">
+				<div class="FullSizeLayoutCenter" id="LeaveType">
+					
+
+<div id="content">
+
+<form action="submit.html" method="post" id="register-form">
+    <div id="form-content">
+        <fieldset>
+
+            <div class="fieldgroup">
+                <input type="text" name="firstname" placeholder="First Name" />
+            </div>
+
+            <div class="fieldgroup">
+                <input type="text" name="lastname" placeholder="Last Name" />
+            </div>
+
+            <div class="fieldgroup">
+ 				<input type="text" name="email" placeholder="Your E-mail ID" />
+            </div>
+
+            <div class="fieldgroup">
+               <input type="password" name="password" placeholder="Your Password" />
+            </div>
+
+            <div class="fieldgroup">
+                <input type="submit" value="Sign UP" class="submit">
+            </div>
+
+        </fieldset>
+    </div>
+</form>
+
+</div>
+
+</div>
+<!-- <hr style="background-color: dimgrey;color: dimgrey;border: solid 2px dimgrey;height: 5px;"> -->
+
+		
+
+	
+				
+    
+	
+
+</div>
+			<div class="End clearfix">
+				<div class="End1">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Technology</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div><!--End1-->
+				<div class="link">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+						<li><a href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+					</ul>
+				</div><!--link-->
+			</div><!--End-->
+
+			<div class="Endpara clearfix">
+					<p>© Intervest Software Technologies Pvt Ltd.</p>
+				</div>
+			
+		</div><!--wrapper-->
+	</body>
+	</html>	

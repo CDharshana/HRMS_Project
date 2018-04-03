@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/intervest_hrms" />
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="1234" />
+	</beans:bean>
+	<!-- Hibernate 4 SessionFactory Bean definition -->
+	<beans:bean id="hibernate4AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="annotatedClasses">
+			<beans:list>
+				<beans:value>com.intervest.hrms.model.User</beans:value>
+				<beans:value>com.intervest.hrms.model.LeaveType</beans:value>
+				<beans:value>com.intervest.hrms.model.Employee</beans:value>
+				<beans:value>com.intervest.hrms.model.Holiday</beans:value>
+				<beans:value>com.intervest.hrms.model.LeavePeriod</beans:value>
+				<beans:value>com.intervest.hrms.model.AppliedLeave</beans:value>
+				<beans:value>com.intervest.hrms.model.Employee</beans:value>
+				<beans:value>com.intervest.hrms.model.LeaveStatus</beans:value>
+				<beans:value>com.intervest.hrms.model.LeaveAmount</beans:value>
+				<beans:value>com.intervest.hrms.model.LeaveEntitlement</beans:value>
+				<beans:value>com.intervest.hrms.model.EntitlementDetail
+				</beans:value>
+				<beans:value>com.intervest.hrms.model.TrainingProgram</beans:value>
+				<beans:value>com.intervest.hrms.model.TrainingEmployee</beans:value>
+				<beans:value>com.intervest.hrms.model.Designation</beans:value>
+				<beans:value>com.intervest.hrms.model.VariablePay</beans:value>
+				<beans:value>com.intervest.hrms.model.VariableDeduction
+				</beans:value>
+			</beans:list>
+		</beans:property>
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+				</beans:prop>
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+
+
+	<beans:bean id="personDAO" class="com.intervest.hrms.dao.LeaveTypeDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="leaveTypeService"
+		class="com.intervest.hrms.service.LeaveTypeServiceImpl">
+		<beans:property name="leaveTypeDao" ref="personDAO"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="employeeDAO" class="com.intervest.hrms.dao.EmployeeDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="empService"
+		class="com.intervest.hrms.service.EmployeeServiceImpl">
+		<beans:property name="employeeDao" ref="employeeDAO"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="holidayDao" class="com.intervest.hrms.dao.HolidayDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="holidayService"
+		class="com.intervest.hrms.service.HolidayServiceImpl">
+		<beans:property name="holidayDao" ref="holidayDao"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="leavePeriodDao" class="com.intervest.hrms.dao.LeavePeriodDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="leavePeriodService"
+		class="com.intervest.hrms.service.LeavePeriodServiceImpl">
+		<beans:property name="leavePeriodDao" ref="leavePeriodDao"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="appliedLeaveDao" class="com.intervest.hrms.dao.AppliedLeaveDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="appliedLeaveService"
+		class="com.intervest.hrms.service.AppliedLeaveServiceImpl">
+		<beans:property name="appliedLeaveDao" ref="appliedLeaveDao"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="userDao" class="com.intervest.hrms.dao.UserDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="userService" class="com.intervest.hrms.service.UserServiceImpl">
+		<beans:property name="userDao" ref="userDao"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="leaveEntitlementDao"
+		class="com.intervest.hrms.dao.LeaveEntitlementDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="leaveEntitlementService"
+		class="com.intervest.hrms.service.LeaveEntitlementServiceImpl">
+		<beans:property name="leaveEntitlementDao" ref="leaveEntitlementDao"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="trainingDao"
+		class="com.intervest.hrms.dao.TrainingProgramDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="trainingService"
+		class="com.intervest.hrms.service.TrainingProgramServiceImpl">
+		<beans:property name="trainingProgramDao" ref="trainingDao"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="designationDao" class="com.intervest.hrms.dao.DesignationDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="designationService"
+		class="com.intervest.hrms.service.DesignationServiceImpl">
+		<beans:property name="designationDao" ref="designationDao"></beans:property>
+	</beans:bean>
+	<context:component-scan base-package="com.intervest.hrms" />
+
+	<beans:bean id="salaryDAO" class="com.intervest.hrms.dao.SalaryDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="salaryService"
+		class="com.intervest.hrms.service.SalaryServiceImpl">
+		<beans:property name="salaryDao" ref="salaryDAO"></beans:property>
+	</beans:bean>
+
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<beans:bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+
+
+</beans:beans>

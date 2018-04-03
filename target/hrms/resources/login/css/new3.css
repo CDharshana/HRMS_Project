@@ -1,0 +1,92 @@
+body{
+	background-image:url(011.jpg);
+}
+
+ul{
+	list-style: none;
+	
+} 
+
+h1{
+	
+	font: 15px arial, sans-serif;
+	font-size: 60px;
+}
+h2{
+	font: 15px arial, sans-serif;
+	font-size:25px;
+}
+ul li a{
+	color: white;
+	display:block;
+	text-decoration: none;
+}
+ul li{
+	float:left;
+	width:225px;
+	height:40px;
+	background-color: black;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	opacity:0.8;
+	border:1px solid #285189;
+}
+
+ul li a:hover{
+	background-color: orange;
+}
+
+ul li ul li{
+	display:none;
+}
+
+ul li:hover ul li{
+	display:block;
+}
+
+.top1{
+	margin-top: 50px;
+}
+
+div.intro{
+	width:1100px;
+	margin:20px;
+
+}
+
+div.intro div.introimage{
+	width:400px;
+	float:left;
+	margin:45px 50px 0px 20px;
+
+}
+
+div.intro div.introtext{
+	width:570px;
+	float:left;
+	margin-top: 50px;
+}
+
+div.intro div.introtext div.B1{
+	font: 15px arial, sans-serif;
+	color: #31A6FF;
+	font-weight: 100;
+	font-size: 25px;
+	text-align:center;	
+
+	border:solid 2px #31A6FF;
+	border-radius: 50px;
+	margin-top: 12px;
+	padding: 3px 80px;
+}
+
+
+div.intro div.introtext div.B1:hover{
+	background-color: #31A6FF;
+	color:#fff;
+}
+a{
+	text-decoration: inherit;
+}
+

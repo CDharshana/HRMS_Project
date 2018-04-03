@@ -1,0 +1,40 @@
+/* FORM 1 */
+
+#register-form {
+ 
+   width:50%;
+}
+
+
+fieldset{ border:none; }
+
+#register-form .form-group input checkbox{
+   
+ width:100%;
+ border:solid #cdcdcd 1px;
+ border-radius:3px;
+ padding-left:10px;
+}
+
+#register-form .submit {
+    padding: 10px;
+    height: 40px !important;
+ background:#00a2d1;
+ color:#fff;
+ font-weight:bolder;
+ border:solid #cdcdcd 1px;
+ border-radius:3px;
+}
+
+#register-form .form-group label.error {
+ 
+	color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+	margin-top:1%;
+	padding: 1%;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+

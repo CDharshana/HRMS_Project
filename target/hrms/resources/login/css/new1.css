@@ -1,0 +1,59 @@
+
+
+body{
+	font: 15px arial, sans-serif;
+}
+
+
+
+h1{
+	font-size: 60px;
+}
+h2{
+	font-size:25px;
+}
+body{
+	background-image: url("011.jpg");
+}
+.circle img{
+	width:220px;
+	height:160px;
+	border-radius: 70%;
+}
+
+.PIM{
+	padding-left: 700px;
+}
+.Admin{
+	margin-left: 250px;
+	animation-duration:3s;
+}
+
+.Leave{
+	margin-left: 250px;
+}
+.Salary{
+	margin-left: 700px;
+}
+div.copyrights{
+	width:1500px;
+	background-color: #eee;
+	float:left;
+}
+
+div.left{
+	float:left;
+	margin :20px; 
+}
+div.right {
+	float:right;
+	margin:20px;
+}
+
+
+.header{
+	background: rgb(247, 249, 249);
+	padding-bottom: 2px;
+	opacity: 0.8;
+}
+
