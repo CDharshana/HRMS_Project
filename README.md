@@ -1,0 +1,2 @@
+# HRMS_Project
+A system consists with key HR functions were developed in order to maintain a proper HR procedure in an organizational contexts. Attributes of the software consist with allowing to mark attendance using a finger print sensor, enable to apply for leave, identify unauthorized absence, generate leave and attendance reports and manage the pay role system of the organization. Used Technologies – JavaEE, Spring mvc, Hibernate ORM and mysql database
